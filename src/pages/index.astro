@@ -1,255 +1,112 @@
 ---
+
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Angelo Alberico | Nakura125</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        /* Variabili stile al-folio */
-        :root {
-            --global-text-color: #333333;
-            --global-bg-color: #ffffff;
-            --global-theme-color: #2698ba; /* Un blu elegante, modificabile */
-            --global-divider-color: #e8e8e8;
-            --global-font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: var(--global-font-family);
-            color: var(--global-text-color);
-            background-color: var(--global-bg-color);
-            line-height: 1.6;
-            font-size: 1rem;
-        }
-
-        /* Navbar stile al-folio (header in alto con bordo sottile) */
-        header {
-            border-bottom: 1px solid var(--global-divider-color);
-            padding: 1rem 0;
-            margin-bottom: 3rem;
-        }
-
-        .header-container {
-            max-width: 800px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 1.5rem;
-        }
-
-        .header-container .logo {
-            font-size: 1.2rem;
-            font-weight: 500;
-            color: var(--global-text-color);
-            text-decoration: none;
-        }
-
-        nav {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        nav a {
-            color: #666;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: color 0.2s;
-        }
-
-        nav a:hover, nav a.active {
-            color: var(--global-theme-color);
-        }
-
-        /* Container Principale */
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 1.5rem 4rem;
-        }
-
-        /* Sezione Profilo (Testo a sx, Foto a dx) */
-        .profile-wrapper {
-            display: flex;
-            gap: 3rem;
-            align-items: flex-start;
-            margin-bottom: 3rem;
-        }
-
-        .profile-text {
-            flex: 1;
-        }
-
-        .profile-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 0.2rem;
-            letter-spacing: -0.5px;
-        }
-
-        .profile-subtitle {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 1.5rem;
-            font-weight: 400;
-        }
-
-        .profile-image {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-        }
-
-        p {
-            margin-bottom: 1rem;
-            color: #444;
-        }
-
-        a {
-            color: var(--global-theme-color);
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* Icone Social */
-        .social-icons {
-            margin-top: 1.5rem;
-            display: flex;
-            gap: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .social-icons a {
-            color: #555;
-            transition: color 0.2s;
-        }
-
-        .social-icons a:hover {
-            color: var(--global-theme-color);
-        }
-
-        /* Sezione News / Tech Stack */
-        h2 {
-            font-size: 1.5rem;
-            border-bottom: 1px solid var(--global-divider-color);
-            padding-bottom: 0.5rem;
-            margin: 2.5rem 0 1rem;
-            font-weight: 600;
-        }
-
-        .tech-stack ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .tech-stack li {
-            background-color: #f4f4f4;
-            color: #333;
-            padding: 0.3rem 0.8rem;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            font-family: monospace;
-        }
-
-        /* Responsive */
-        @media (max-width: 600px) {
-            .profile-wrapper {
-                flex-direction: column-reverse;
-                text-align: center;
-                align-items: center;
-            }
-            .social-icons {
-                justify-content: center;
-            }
-        }
-    </style>
-</head>
-<body>
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
     <header>
-        <div class="header-container">
-            <a href="/" class="logo">Angelo Alberico</a>
-            <nav>
-                <a href="/" class="active">about</a>
-                <a href="/projects">projects</a>
-                <a href="/repositories">repositories</a>
-                <a href="/cv">cv</a>
-            </nav>
-        </div>
+      <div class="header-container">
+        <a href="/" class="logo">Angelo Alberico</a>
+        <nav>
+          <a href="/" class="active">about</a>
+          <a href="/projects">projects</a>
+          <a href="/repositories">repositories</a>
+          <a href="/cv">cv</a>
+        </nav>
+      </div>
     </header>
 
     <main class="container">
-        
-        <div class="profile-wrapper">
-            <div class="profile-text">
-                <h1 class="profile-title">Angelo Alberico</h1>
-                <h2 class="profile-subtitle">Computer Science student @ UNISA</h2>
+      <div class="profile-wrapper">
+        <div class="profile-text">
+          <h1 class="profile-title">Angelo Alberico</h1>
+          <h2 class="profile-subtitle">Computer Science student @ UNISA</h2>
 
-                <p>
-                    Ciao 🐱‍🏍! Sono uno studente di Informatica presso l'<a href="https://www.unisa.it/" target="_blank">Università degli Studi di Salerno</a>. 
-                    Il mio obiettivo è ampliare continuamente le mie conoscenze e perfezionare le mie competenze nello sviluppo software.
-                </p>
-                <p>
-                    I miei progetti spaziano dallo sviluppo di applicazioni web moderne (come <strong>GottaBattleEmAll.com</strong> e <strong>buyemall</strong>) 
-                    alla risoluzione di problemi algoritmici complessi legati all'Intelligenza Artificiale Fondamentale. 
-                    Attualmente ho all'attivo anche collaborazioni su progetti cloud-native come <strong>WRF4Salerno</strong> con l'ISISLab.
-                </p>
+          <p>
+            Ciao 🐱‍🏍! Sono uno studente di Informatica presso l'<a
+              href="https://www.unisa.it/"
+              target="_blank">Università degli Studi di Salerno</a
+            >. Il mio obiettivo è ampliare continuamente le mie conoscenze e
+            perfezionare le mie competenze nello sviluppo software.
+          </p>
+          <p>
+            I miei progetti spaziano dallo sviluppo di applicazioni web moderne
+            (come <strong>GottaBattleEmAll.com</strong> e <strong
+              >buyemall</strong
+            >) alla risoluzione di problemi algoritmici complessi legati
+            all'Intelligenza Artificiale Fondamentale. Attualmente ho all'attivo
+            anche collaborazioni su progetti cloud-native come <strong
+              >WRF4Salerno</strong
+            > con l'ISISLab.
+          </p>
 
-                <div class="social-icons">
-                    <a href="mailto:tua-email@studenti.unisa.it" title="Email"><i class="fas fa-envelope"></i></a>
-                    <a href="https://github.com/Nakura125" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/angelo-alberico-566244216/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-            
-            <img src="https://avatars.githubusercontent.com/u/60366172?v=4" alt="Angelo Alberico" class="profile-image">
+          <div class="social-icons">
+            <a href="mailto:tua-email@studenti.unisa.it" title="Email"
+              ><i class="fas fa-envelope"></i></a
+            >
+            <a
+              href="https://github.com/Nakura125"
+              target="_blank"
+              title="GitHub"><i class="fab fa-github"></i></a
+            >
+            <a
+              href="https://www.linkedin.com/in/angelo-alberico-566244216/"
+              target="_blank"
+              title="LinkedIn"><i class="fab fa-linkedin"></i></a
+            >
+          </div>
         </div>
 
-        <div class="tech-stack">
-            <h2>🛠️ Skills & Technologies</h2>
-            <p>Una panoramica delle tecnologie che utilizzo per i miei progetti universitari e personali:</p>
-            <ul>
-                <li>C</li>
-                <li>C++</li>
-                <li>Java</li>
-                <li>Python</li>
-                <li>Go</li>
-                <li>JavaScript</li>
-                <li>HTML5 / CSS3</li>
-                <li>Spring Boot</li>
-                <li>Node.js</li>
-                <li>Express.js</li>
-                <li>Django</li>
-                <li>MySQL</li>
-                <li>MongoDB</li>
-            </ul>
-        </div>
+        <img
+          src="https://avatars.githubusercontent.com/u/60366172?v=4"
+          alt="Angelo Alberico"
+          class="profile-image"
+        />
+      </div>
 
-        <div>
-            <h2>📚 Latest Projects</h2>
-            <p>Se vuoi dare un'occhiata al codice sorgente dei miei ultimi lavori, visita la pagina <a href="/projects">projects</a> o dai un'occhiata direttamente al mio <a href="https://github.com/Nakura125" target="_blank">profilo GitHub</a>.</p>
-        </div>
+      <div class="tech-stack">
+        <h2>🛠️ Skills & Technologies</h2>
+        <p>
+          Una panoramica delle tecnologie che utilizzo per i miei progetti
+          universitari e personali:
+        </p>
+        <ul>
+          <li>C</li>
+          <li>C++</li>
+          <li>Java</li>
+          <li>Python</li>
+          <li>Go</li>
+          <li>JavaScript</li>
+          <li>HTML5 / CSS3</li>
+          <li>Spring Boot</li>
+          <li>Node.js</li>
+          <li>Express.js</li>
+          <li>Django</li>
+          <li>MySQL</li>
+          <li>MongoDB</li>
+        </ul>
+      </div>
 
+      <div>
+        <h2>📚 Latest Projects</h2>
+        <p>
+          Se vuoi dare un'occhiata al codice sorgente dei miei ultimi lavori,
+          visita la pagina <a href="/projects">projects</a> o dai un'occhiata direttamente
+          al mio <a href="https://github.com/Nakura125" target="_blank"
+            >profilo GitHub</a
+          >.
+        </p>
+      </div>
     </main>
-
-</body>
+  </body>
 </html>
