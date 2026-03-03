@@ -1,0 +1,16 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio personale di Angelo Alberico",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "keywords": [],
+  "author": "Angelo Alberico",
+  "license": "MIT",
+  "dependencies": {
+    "astro": "^5.18.0"
+  }
+}
