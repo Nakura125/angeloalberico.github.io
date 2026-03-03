@@ -1,4 +1,4 @@
-/* Variabili stile al-folio */
+/* Variabili stile al-folio - Light Mode (default) */
 :root {
   --global-text-color: #333333;
   --global-bg-color: #ffffff;
@@ -7,6 +7,28 @@
   --global-font-family:
     -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue",
     "Lucida Grande", Arial, sans-serif;
+  --global-secondary-text-color: #666;
+  --global-tertiary-text-color: #444;
+  --global-tech-stack-bg: #f4f4f4;
+  --global-tech-stack-color: #333;
+  --global-social-icon-color: #555;
+  --global-shadow-color: rgba(0, 0, 0, 0.08);
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --global-text-color: #e0e0e0;
+    --global-bg-color: #1a1a1a;
+    --global-theme-color: #4db8d8;
+    --global-divider-color: #333333;
+    --global-secondary-text-color: #aaaaaa;
+    --global-tertiary-text-color: #cccccc;
+    --global-tech-stack-bg: #2a2a2a;
+    --global-tech-stack-color: #e0e0e0;
+    --global-social-icon-color: #aaaaaa;
+    --global-shadow-color: rgba(0, 0, 0, 0.3);
+  }
 }
 
 * {
@@ -52,7 +74,7 @@ nav {
 }
 
 nav a {
-  color: #666;
+  color: var(--global-secondary-text-color);
   text-decoration: none;
   font-size: 1rem;
   transition: color 0.2s;
@@ -91,7 +113,7 @@ nav a.active {
 
 .profile-subtitle {
   font-size: 1.2rem;
-  color: #666;
+  color: var(--global-secondary-text-color);
   margin-bottom: 1.5rem;
   font-weight: 400;
 }
@@ -101,12 +123,12 @@ nav a.active {
   height: 180px;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 5px 15px var(--global-shadow-color);
 }
 
 p {
   margin-bottom: 1rem;
-  color: #444;
+  color: var(--global-tertiary-text-color);
 }
 
 a {
@@ -127,7 +149,7 @@ a:hover {
 }
 
 .social-icons a {
-  color: #555;
+  color: var(--global-social-icon-color);
   transition: color 0.2s;
 }
 
@@ -153,8 +175,8 @@ h2 {
 }
 
 .tech-stack li {
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: var(--global-tech-stack-bg);
+  color: var(--global-tech-stack-color);
   padding: 0.3rem 0.8rem;
   border-radius: 4px;
   font-size: 0.9rem;
