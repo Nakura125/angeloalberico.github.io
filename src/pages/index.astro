@@ -1,0 +1,189 @@
+---
+import { getCollection } from 'astro:content';
+---
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angelo Alberico - Sviluppatore & Studente UNISA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        nav {
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: #667eea;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .intro {
+            margin-bottom: 2rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .tech-stack {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            border-radius: 8px;
+        }
+
+        .tech-stack h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .tech-stack ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .tech-stack li {
+            padding: 0.5rem;
+            background: white;
+            border-radius: 6px;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .tech-stack li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-buttons a {
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+
+        .cta-secondary:hover {
+            background: #667eea;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">About</a>
+        <a href="/projects">Projects</a>
+        <a href="/repositories">Repositories</a>
+        <a href="/cv">CV</a>
+    </nav>
+
+    <div class="container">
+        <h1>Angelo Alberico</h1>
+        <p class="subtitle">Sviluppatore Web & Studente UNISA</p>
+
+        <div class="intro">
+            <p>Ciao! Sono uno studente appassionato di <strong>sviluppo web</strong> e <strong>algoritmi</strong> presso l'Università di Salerno (UNISA). 
+            Mi piace creare soluzioni innovative e contribuire a progetti che fanno la differenza.</p>
+            
+            <p style="margin-top: 1rem;">Attualmente collaboro con <strong>ISISLab</strong> su progetti come <strong>WRF4Salerno</strong>, 
+            un sistema di previsione meteorologica ad alta risoluzione per il territorio campano.</p>
+        </div>
+
+        <div class="tech-stack">
+            <h3>Tecnologie & Skills</h3>
+            <ul>
+                <li>Frontend: React, Vue.js, Astro, Tailwind CSS</li>
+                <li>Backend: Node.js, Python, Java</li>
+                <li>Database: PostgreSQL, MongoDB</li>
+                <li>Tools: Git, Docker, Linux</li>
+                <li>Data Science: NumPy, Pandas, scikit-learn</li>
+                <li>IoT & Embedded: Arduino, RaspberryPi</li>
+            </ul>
+        </div>
+
+        <div class="cta-buttons">
+            <a href="/projects" class="cta-primary">Vedi i miei progetti</a>
+            <a href="/repositories" class="cta-secondary">GitHub</a>
+            <a href="/cv" class="cta-secondary">Scarica CV</a>
+        </div>
+    </div>
+</body>
+</html>
