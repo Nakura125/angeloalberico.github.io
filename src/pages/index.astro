@@ -1,108 +1,14 @@
 ---
-import '../styles/global.css';
+import MainLayout from '../layouts/Mainlayout.astro';
 ---
 
-<!doctype html>
-<html lang="it">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Angelo Alberico | Nakura125</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-  <body>
-    <header>
-      <div class="header-container">
-        <a href="/" class="logo">Angelo Alberico</a>
-        <nav>
-          <a href="/" class="active">about</a>
-          <a href="/projects">projects</a>
-          <a href="/repositories">repositories</a>
-          <a href="/cv">cv</a>
-        </nav>
-      </div>
-    </header>
-
-    <main class="container">
-      <div class="profile-wrapper">
+<MainLayout title="About">
+    <div class="profile-wrapper">
         <div class="profile-text">
-          <h1 class="profile-title">Angelo Alberico</h1>
-          <h2 class="profile-subtitle">Computer Science student @ UNISA</h2>
-
-          <p>
-            Ciao 🐱‍🏍! Sono uno studente di Informatica presso l'<a
-              href="https://www.unisa.it/"
-              target="_blank">Università degli Studi di Salerno</a
-            >. Il mio obiettivo è ampliare continuamente le mie conoscenze e
-            perfezionare le mie competenze nello sviluppo software.
-          </p>
-          <p>
-            I miei progetti spaziano dallo sviluppo di applicazioni web moderne
-            (come <strong>GottaBattleEmAll.com</strong> e <strong
-              >buyemall</strong
-            >) alla risoluzione di problemi algoritmici complessi legati
-            all'Intelligenza Artificiale Fondamentale. Attualmente ho all'attivo
-            anche collaborazioni su progetti cloud-native come <strong
-              >WRF4Salerno</strong
-            > con l'ISISLab.
-          </p>
-
-          <div class="social-icons">
-            <a
-              href="https://github.com/Nakura125"
-              target="_blank"
-              title="GitHub"><i class="fab fa-github"></i></a
-            >
-            <a
-              href="https://www.linkedin.com/in/angelo-alberico-566244216/"
-              target="_blank"
-              title="LinkedIn"><i class="fab fa-linkedin"></i></a
-            >
-          </div>
-        </div>
-
-        <img
-          src="https://avatars.githubusercontent.com/u/60366172?v=4"
-          alt="Angelo Alberico"
-          class="profile-image"
-        />
-      </div>
-
-      <div class="tech-stack">
-        <h2>🛠️ Skills & Technologies</h2>
-        <p>
-          Una panoramica delle tecnologie che utilizzo per i miei progetti
-          universitari e personali:
-        </p>
-        <ul>
-          <li>C</li>
-          <li>C++</li>
-          <li>Java</li>
-          <li>Python</li>
-          <li>Go</li>
-          <li>JavaScript</li>
-          <li>HTML5 / CSS3</li>
-          <li>Spring Boot</li>
-          <li>Node.js</li>
-          <li>Express.js</li>
-          <li>Django</li>
-          <li>MySQL</li>
-          <li>MongoDB</li>
-        </ul>
-      </div>
-
-      <div>
-        <h2>📚 Latest Projects</h2>
-        <p>
-          Se vuoi dare un'occhiata al codice sorgente dei miei ultimi lavori,
-          visita la pagina <a href="/projects">projects</a> o dai un'occhiata direttamente
-          al mio <a href="https://github.com/Nakura125" target="_blank"
-            >profilo GitHub</a
-          >.
-        </p>
-      </div>
-    </main>
-  </body>
-</html>
+            <h1 class="profile-title">Angelo Alberico</h1>
+            <h2 class="profile-subtitle">Computer Science student @ UNISA</h2>
+            <p>Ciao 🐱‍🏍! Sono uno studente di Informatica...</p>
+            </div>
+        <img src="https://avatars.githubusercontent.com/u/60366172?v=4" alt="Angelo Alberico" class="profile-image">
+    </div>
+</MainLayout>
