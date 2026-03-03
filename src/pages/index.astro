@@ -1,5 +1,6 @@
 ---
-import { getCollection } from 'astro:content';
+// index.astro
+// Puoi importare layout o componenti qui, se ne creerai in futuro
 ---
 
 <!DOCTYPE html>
@@ -7,8 +8,19 @@ import { getCollection } from 'astro:content';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Angelo Alberico - Sviluppatore & Studente UNISA</title>
+    <title>Angelo Alberico | Nakura125</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
+        /* Variabili stile al-folio */
+        :root {
+            --global-text-color: #333333;
+            --global-bg-color: #ffffff;
+            --global-theme-color: #2698ba; /* Un blu elegante, modificabile */
+            --global-divider-color: #e8e8e8;
+            --global-font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -16,174 +28,230 @@ import { getCollection } from 'astro:content';
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: var(--global-font-family);
+            color: var(--global-text-color);
+            background-color: var(--global-bg-color);
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 2rem;
+            font-size: 1rem;
+        }
+
+        /* Navbar stile al-folio (header in alto con bordo sottile) */
+        header {
+            border-bottom: 1px solid var(--global-divider-color);
+            padding: 1rem 0;
+            margin-bottom: 3rem;
+        }
+
+        .header-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1.5rem;
+        }
+
+        .header-container .logo {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--global-text-color);
+            text-decoration: none;
         }
 
         nav {
-            max-width: 900px;
-            margin: 0 auto 3rem;
             display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
+            gap: 1.5rem;
         }
 
         nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            transition: background 0.3s;
-        }
-
-        nav a:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 12px;
-            padding: 3rem;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-        }
-
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-            color: #667eea;
-        }
-
-        .subtitle {
-            font-size: 1.3rem;
             color: #666;
-            margin-bottom: 1rem;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.2s;
         }
 
-        .intro {
-            margin-bottom: 2rem;
+        nav a:hover, nav a.active {
+            color: var(--global-theme-color);
+        }
+
+        /* Container Principale */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1.5rem 4rem;
+        }
+
+        /* Sezione Profilo (Testo a sx, Foto a dx) */
+        .profile-wrapper {
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+            margin-bottom: 3rem;
+        }
+
+        .profile-text {
+            flex: 1;
+        }
+
+        .profile-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+            letter-spacing: -0.5px;
+        }
+
+        .profile-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #444;
+        }
+
+        a {
+            color: var(--global-theme-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Icone Social */
+        .social-icons {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .social-icons a {
             color: #555;
-            line-height: 1.8;
+            transition: color 0.2s;
         }
 
-        .tech-stack {
-            margin: 2rem 0;
-            padding: 1.5rem;
-            background: #f8f9fa;
-            border-left: 4px solid #667eea;
-            border-radius: 8px;
+        .social-icons a:hover {
+            color: var(--global-theme-color);
         }
 
-        .tech-stack h3 {
-            color: #667eea;
-            margin-bottom: 1rem;
+        /* Sezione News / Tech Stack */
+        h2 {
+            font-size: 1.5rem;
+            border-bottom: 1px solid var(--global-divider-color);
+            padding-bottom: 0.5rem;
+            margin: 2.5rem 0 1rem;
+            font-weight: 600;
         }
 
         .tech-stack ul {
             list-style: none;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
         }
 
         .tech-stack li {
-            padding: 0.5rem;
-            background: white;
-            border-radius: 6px;
-            padding-left: 1.5rem;
-            position: relative;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-family: monospace;
         }
 
-        .tech-stack li:before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: #667eea;
-            font-weight: bold;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .cta-buttons a {
-            padding: 0.8rem 1.5rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .cta-primary {
-            background: #667eea;
-            color: white;
-        }
-
-        .cta-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-        }
-
-        .cta-secondary {
-            background: transparent;
-            color: #667eea;
-            border: 2px solid #667eea;
-        }
-
-        .cta-secondary:hover {
-            background: #667eea;
-            color: white;
+        /* Responsive */
+        @media (max-width: 600px) {
+            .profile-wrapper {
+                flex-direction: column-reverse;
+                text-align: center;
+                align-items: center;
+            }
+            .social-icons {
+                justify-content: center;
+            }
         }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="/">About</a>
-        <a href="/projects">Projects</a>
-        <a href="/repositories">Repositories</a>
-        <a href="/cv">CV</a>
-    </nav>
 
-    <div class="container">
-        <h1>Angelo Alberico</h1>
-        <p class="subtitle">Sviluppatore Web & Studente UNISA</p>
+    <header>
+        <div class="header-container">
+            <a href="/" class="logo">Angelo Alberico</a>
+            <nav>
+                <a href="/" class="active">about</a>
+                <a href="/projects">projects</a>
+                <a href="/repositories">repositories</a>
+                <a href="/cv">cv</a>
+            </nav>
+        </div>
+    </header>
 
-        <div class="intro">
-            <p>Ciao! Sono uno studente appassionato di <strong>sviluppo web</strong> e <strong>algoritmi</strong> presso l'Università di Salerno (UNISA). 
-            Mi piace creare soluzioni innovative e contribuire a progetti che fanno la differenza.</p>
+    <main class="container">
+        
+        <div class="profile-wrapper">
+            <div class="profile-text">
+                <h1 class="profile-title">Angelo Alberico</h1>
+                <h2 class="profile-subtitle">Computer Science student @ UNISA</h2>
+
+                <p>
+                    Ciao 🐱‍🏍! Sono uno studente di Informatica presso l'<a href="https://www.unisa.it/" target="_blank">Università degli Studi di Salerno</a>. 
+                    Il mio obiettivo è ampliare continuamente le mie conoscenze e perfezionare le mie competenze nello sviluppo software.
+                </p>
+                <p>
+                    I miei progetti spaziano dallo sviluppo di applicazioni web moderne (come <strong>GottaBattleEmAll.com</strong> e <strong>buyemall</strong>) 
+                    alla risoluzione di problemi algoritmici complessi legati all'Intelligenza Artificiale Fondamentale. 
+                    Attualmente ho all'attivo anche collaborazioni su progetti cloud-native come <strong>WRF4Salerno</strong> con l'ISISLab.
+                </p>
+
+                <div class="social-icons">
+                    <a href="mailto:tua-email@studenti.unisa.it" title="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/Nakura125" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/angelo-alberico-566244216/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
             
-            <p style="margin-top: 1rem;">Attualmente collaboro con <strong>ISISLab</strong> su progetti come <strong>WRF4Salerno</strong>, 
-            un sistema di previsione meteorologica ad alta risoluzione per il territorio campano.</p>
+            <img src="https://avatars.githubusercontent.com/u/60366172?v=4" alt="Angelo Alberico" class="profile-image">
         </div>
 
         <div class="tech-stack">
-            <h3>Tecnologie & Skills</h3>
+            <h2>🛠️ Skills & Technologies</h2>
+            <p>Una panoramica delle tecnologie che utilizzo per i miei progetti universitari e personali:</p>
             <ul>
-                <li>Frontend: React, Vue.js, Astro, Tailwind CSS</li>
-                <li>Backend: Node.js, Python, Java</li>
-                <li>Database: PostgreSQL, MongoDB</li>
-                <li>Tools: Git, Docker, Linux</li>
-                <li>Data Science: NumPy, Pandas, scikit-learn</li>
-                <li>IoT & Embedded: Arduino, RaspberryPi</li>
+                <li>C</li>
+                <li>C++</li>
+                <li>Java</li>
+                <li>Python</li>
+                <li>Go</li>
+                <li>JavaScript</li>
+                <li>HTML5 / CSS3</li>
+                <li>Spring Boot</li>
+                <li>Node.js</li>
+                <li>Express.js</li>
+                <li>Django</li>
+                <li>MySQL</li>
+                <li>MongoDB</li>
             </ul>
         </div>
 
-        <div class="cta-buttons">
-            <a href="/projects" class="cta-primary">Vedi i miei progetti</a>
-            <a href="/repositories" class="cta-secondary">GitHub</a>
-            <a href="/cv" class="cta-secondary">Scarica CV</a>
+        <div>
+            <h2>📚 Latest Projects</h2>
+            <p>Se vuoi dare un'occhiata al codice sorgente dei miei ultimi lavori, visita la pagina <a href="/projects">projects</a> o dai un'occhiata direttamente al mio <a href="https://github.com/Nakura125" target="_blank">profilo GitHub</a>.</p>
         </div>
-    </div>
+
+    </main>
+
 </body>
 </html>
