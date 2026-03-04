@@ -80,10 +80,10 @@ export const siteConfig = {
     {
       school: "University of Salerno (UNISA)",
       degree: "Bachelor's in Computer Science",
-      field: "Software Engineering & Complex Systems",
+      field: "Cloud Computing & Complex Systems",
       period: "In Progress - Expected 2026",
       description:
-        "Specializing in Software Engineering with a focus on Complex Systems. Strong academic performance with excellent grades.",
+        "Specializing in Cloud Computing with a focus on Complex Systems. Strong academic performance with excellent grades.",
     },
   ],
 } as const;
