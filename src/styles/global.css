@@ -1,11 +1,30 @@
 @import "tailwindcss";
+@import "@radix-ui/colors/gray.css";
+@import "@radix-ui/colors/violet.css";
 
-body {
-  font-family: "IBM Plex Mono", monospace;
+:root {
+  color-scheme: light dark;
+  --accent: #BD93F9;
+  --gray: #8B8D98;
+  --bg-light: #FFFFFF;
+  --bg-dark: #111111;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  font-family: "IBM Plex Mono", monospace;
+  background-color: var(--bg-light);
+  color: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--bg-dark);
+    color: #FFFFFF;
+  }
 }
 
 @keyframes fadeIn {

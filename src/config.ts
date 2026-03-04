@@ -3,14 +3,26 @@ export const siteConfig = {
   title: "Computer Science Student & Developer",
   description:
     "Portfolio website of Angelo Alberico - CS student at UNISA, passionate about web development and algorithms",
-  accentColor: "#2563eb", // Blue
+  accentColor: "#BD93F9", // Violet
+  colors: {
+    dark: {
+      accent: "#BD93F9",
+      gray: "#8B8D98",
+      background: "#111111",
+    },
+    light: {
+      accent: "#BD93F9",
+      gray: "#8B8D98",
+      background: "#FFFFFF",
+    },
+  },
   social: {
-    email: "a.alberico@studenti.unisa.it",
+    email: "a.alberico521@gmail.com",
     linkedin: "https://linkedin.com/in/angelo-alberico-566244216/",
     github: "https://github.com/Nakura125",
   },
   aboutMe:
-    "Sono uno studente appassionato di Informatica presso l'Università di Salerno. Il mio focus principale è lo sviluppo web moderno e la risoluzione di problemi algoritmici complessi. Mi piace creare soluzioni innovative e collaborare con team su progetti stimolanti. Attualmente collaboro con ISISLab su WRF4Salerno, un sistema di previsione meteorologica ad alta risoluzione.",
+    "I am a passionate Computer Science student at the University of Salerno. My primary focus is on modern web development and solving complex algorithmic problems. I enjoy creating innovative solutions and collaborating with teams on exciting projects. Currently, I am collaborating with ISISLab on WRF4Salerno, a high-resolution weather forecasting system.",
   skills: [
     "JavaScript",
     "TypeScript",
@@ -29,58 +41,49 @@ export const siteConfig = {
     {
       name: "GottaBattleEmAll",
       description:
-        "Un'applicazione web interattiva per il gioco di battaglia Pokémon. Integra frontend moderno con backend robusto, implementando sistemi di login, gestione dei pokémon, e battaglie in tempo reale con WebSocket.",
+        "An interactive web application for Pokémon battle gameplay. Integrates modern frontend with robust backend, implementing login systems, Pokémon management, and real-time battles with WebSocket technology.",
       link: "https://github.com/Nakura125/GottaBattleEmAll",
       skills: ["React", "Node.js", "MongoDB", "WebSocket"],
     },
     {
       name: "WRF4Salerno",
       description:
-        "Sistema di previsione meteorologica ad alta risoluzione per il territorio campano. Collaborazione con ISISLab per l'analisi e la visualizzazione di dati meteorologici usando il modello WRF.",
+        "High-resolution weather forecasting system for the Campania region. Collaboration with ISISLab for meteorological data analysis and visualization using the WRF model.",
       link: "https://github.com/ISISLab",
-      skills: ["Python", "Data Science", "Meteorologia"],
+      skills: ["Python", "Data Science", "Meteorology"],
     },
     {
       name: "Portfolio Website",
       description:
-        "Portfolio personale realizzato con Astro e Tailwind CSS v4. Design moderno, responsivo e performante con integrazione GitHub API per mostrare i repository in tempo reale.",
+        "Personal portfolio built with Astro and Tailwind CSS v4. Modern, responsive, and performant design with GitHub API integration for real-time repository display.",
       link: "https://github.com/Nakura125/angeloalberico.github.io",
       skills: ["Astro", "Tailwind CSS", "TypeScript", "GitHub Pages"],
     },
   ],
   experience: [
     {
-      company: "ISISLab - Università di Salerno",
-      title: "Collaboratore Ricerca",
-      dateRange: "2024 - Presente",
-      bullets: [
-        "Analisi e elaborazione dati meteorologici con Python",
-        "Sviluppo di visualizzazioni per dati climatici",
-        "Integrazione modelli WRF per previsioni ad alta risoluzione",
-      ],
+      company: "ISISLab - University of Salerno",
+      position: "Research Collaborator",
+      period: "2024 - Present",
+      description:
+        "Analyzing and processing meteorological data with Python. Developing visualizations for climate data. Integrating WRF models for high-resolution forecasting.",
     },
     {
-      company: "Progetto Universitario",
-      title: "Full Stack Developer",
-      dateRange: "2024 - 2025",
-      bullets: [
-        "Sviluppo frontend con React e design responsive",
-        "Backend con Node.js e Express",
-        "Database design con MongoDB",
-        "Implementazione autenticazione e WebSocket",
-      ],
+      company: "University Project",
+      position: "Full Stack Developer",
+      period: "2024 - 2025",
+      description:
+        "Developed frontend with React and responsive design. Built backend with Node.js and Express. Designed MongoDB databases. Implemented authentication and WebSocket functionality.",
     },
   ],
   education: [
     {
-      school: "Università di Salerno (UNISA)",
-      degree: "Laurea in Informatica",
-      dateRange: "In corso - Previsto 2026",
-      achievements: [
-        "Specializzazione in Ingegneria del Software",
-        "Focus su Sistemi Complessi",
-        "GPA: Eccellente",
-      ],
+      school: "University of Salerno (UNISA)",
+      degree: "Bachelor's in Computer Science",
+      field: "Software Engineering & Complex Systems",
+      period: "In Progress - Expected 2026",
+      description:
+        "Specializing in Software Engineering with a focus on Complex Systems. Strong academic performance with excellent grades.",
     },
   ],
 } as const;

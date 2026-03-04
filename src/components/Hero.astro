@@ -1,38 +1,67 @@
 ---
 import { siteConfig } from "../config";
+
+// Fetch GitHub user data for avatar
+const githubUsername = siteConfig.social?.github?.split('/').pop() || 'Nakura125';
+const githubResponse = await fetch(`https://api.github.com/users/${githubUsername}`);
+const githubData = await githubResponse.json();
 ---
 
 <div
   id="hero"
-  class="relative isolate overflow-hidden bg-white py-24 md:h-screen"
+  class="relative isolate overflow-hidden bg-[var(--bg-light)] dark:bg-[var(--bg-dark)] py-24 md:h-screen"
   style={`--accent-color: ${siteConfig.accentColor}`}
 >
   <!-- Gradient overlay -->
   <div
     class="absolute inset-0 -z-10"
-    style={`background: radial-gradient(ellipse 800px 1200px at 0% 0%, ${siteConfig.accentColor}40 0%, ${siteConfig.accentColor}25 20%, ${siteConfig.accentColor}10 40%, rgba(255, 255, 255, 0.3) 70%, rgba(255, 255, 255, 0.8) 90%, white 100%)`}
+    style={`background: radial-gradient(ellipse 800px 1200px at 0% 0%, ${siteConfig.accentColor}40 0%, ${siteConfig.accentColor}25 20%, ${siteConfig.accentColor}10 40%, rgba(255, 255, 255, 0.3) 70%, rgba(255, 255, 255, 0.8) 90%, var(--bg-light)), radial-gradient(ellipse 800px 1200px at 0% 0%, ${siteConfig.accentColor}20 0%, ${siteConfig.accentColor}10 20%, ${siteConfig.accentColor}5 40%, rgba(17, 17, 17, 0.3) 70%, rgba(17, 17, 17, 0.8) 90%, var(--bg-dark))`}
   >
   </div>
 
   <div class="h-full mx-auto p-8 sm:p-12 md:p-24 flex items-center">
-    <div>
-      <h2 class="text-pretty text-xl sm:text-2xl md:text-5xl font-bold tracking-tight text-gray-700 animate-fade-in">
-        Hello! 👋
-      </h2>
-      <h1
-        class="mt-6 sm:mt-8 md:mt-10 text-pretty text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold tracking-tight text-gray-800 animate-fade-in animation-delay-200"
-      >
-        I'm <span style={{ color: siteConfig.accentColor }}>{siteConfig.name}</span>
-      </h1>
-      <p
-        class="mt-4 sm:mt-6 md:mt-8 text-pretty text-base sm:text-lg md:text-xl/8 font-medium text-gray-600 animate-fade-in animation-delay-400"
-      >
-        {siteConfig.title}
-      </p>
+    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <!-- Left side: Text -->
+      <div>
+        <h2 class="text-pretty text-xl sm:text-2xl md:text-5xl font-bold tracking-tight text-black dark:text-white animate-fade-in">
+          Hello! 👋
+        </h2>
+        <h1
+          class="mt-6 sm:mt-8 md:mt-10 text-pretty text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-black dark:text-white animate-fade-in animation-delay-200"
+        >
+          I'm <span style={{ color: siteConfig.accentColor }}>{siteConfig.name}</span>
+        </h1>
+        <p
+          class="mt-4 sm:mt-6 md:mt-8 text-pretty text-base sm:text-lg md:text-xl/8 font-medium text-black/70 dark:text-white/70 animate-fade-in animation-delay-400"
+        >
+          {siteConfig.title}
+        </p>
+      </div>
+
+      <!-- Right side: Avatar -->
+      {githubData?.avatar_url && (
+        <div class="flex justify-center md:justify-end animate-fade-in animation-delay-600">
+          <div class="relative w-64 h-64 md:w-72 md:h-72">
+            <div
+              class="absolute inset-0 rounded-2xl"
+              style={{
+                background: `linear-gradient(135deg, ${siteConfig.accentColor}, ${siteConfig.accentColor}80)`,
+                opacity: 0.2,
+                animation: 'pulse 3s ease-in-out infinite',
+              }}
+            />
+            <img
+              src={githubData.avatar_url}
+              alt={githubData.name || githubUsername}
+              class="relative w-full h-full rounded-2xl border-4 border-[var(--accent-color)] shadow-2xl object-cover"
+            />
+          </div>
+        </div>
+      )}
     </div>
   </div>
 
-  <div class="absolute bottom-0 left-0 right-0 p-8 sm:p-12 md:p-24 flex gap-x-4 sm:gap-x-6 md:gap-x-8 text-gray-700 animate-fade-in animation-delay-600">
+  <div class="absolute bottom-0 left-0 right-0 p-8 sm:p-12 md:p-24 flex gap-x-4 sm:gap-x-6 md:gap-x-8 text-black dark:text-white animate-fade-in animation-delay-600">
     {
       siteConfig.social?.email && (
         <a
@@ -119,3 +148,14 @@ import { siteConfig } from "../config";
     }
   </div>
 </div>
+
+<style>
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 0.2;
+    }
+    50% {
+      opacity: 0.4;
+    }
+  }
+</style>
