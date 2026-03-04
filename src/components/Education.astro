@@ -1,0 +1,59 @@
+---
+import { siteConfig } from "../config";
+const hasEducation = siteConfig.education && siteConfig.education.length > 0;
+---
+
+{
+  hasEducation && (
+    <section id="education" class="p-8 sm:p-12 md:p-16 lg:p-24">
+      <div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+          <div class="lg:col-span-4">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900">
+              Education
+            </h2>
+            <div
+              class="w-[75px] h-[5px] mt-2 rounded-full"
+              style={`background-color: ${siteConfig.accentColor}`}
+            />
+          </div>
+
+          <div class="lg:col-span-8">
+            <div class="space-y-6">
+              {siteConfig.education.map((edu) => (
+                <div class="p-4 sm:p-6 md:p-8 bg-gray-50 rounded-xl sm:rounded-2xl border border-gray-200 hover:bg-white hover:shadow-lg hover:border-gray-300 transition-all duration-300">
+                  <div class="space-y-2">
+                    <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-900">
+                      {edu.school}
+                    </h3>
+                    <p
+                      class="text-base sm:text-lg font-semibold"
+                      style={{ color: siteConfig.accentColor }}
+                    >
+                      {edu.degree}
+                    </p>
+                    {edu.field && (
+                      <p class="text-sm sm:text-base text-gray-600 font-medium">
+                        {edu.field}
+                      </p>
+                    )}
+                    {edu.period && (
+                      <p class="text-sm sm:text-base text-gray-500 font-medium pt-2">
+                        {edu.period}
+                      </p>
+                    )}
+                    {edu.description && (
+                      <p class="text-base sm:text-lg text-gray-600 leading-relaxed pt-2">
+                        {edu.description}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}

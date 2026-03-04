@@ -1,14 +1,20 @@
 ---
-import MainLayout from '../layouts/Mainlayout.astro';
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Projects from '../components/Projects.astro';
+import Experience from '../components/Experience.astro';
+import Education from '../components/Education.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<MainLayout title="About">
-    <div class="profile-wrapper">
-        <div class="profile-text">
-            <h1 class="profile-title">Angelo Alberico</h1>
-            <h2 class="profile-subtitle">Computer Science student @ UNISA</h2>
-            <p>Ciao 🐱‍🏍! Sono uno studente di Informatica...</p>
-            </div>
-        <img src="https://avatars.githubusercontent.com/u/60366172?v=4" alt="Angelo Alberico" class="profile-image">
-    </div>
-</MainLayout>
+<Layout title="Angelo Alberico - Portfolio">
+	<Header />
+	<Hero />
+	<About />
+	<Projects />
+	<Experience />
+	<Education />
+	<Footer />
+</Layout>

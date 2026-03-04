@@ -1,196 +1,37 @@
-/* Variabili stile al-folio - Light Mode (default) */
-:root {
-  --global-text-color: #333333;
-  --global-bg-color: #ffffff;
-  --global-theme-color: #2698ba; /* Un blu elegante, modificabile */
-  --global-divider-color: #e8e8e8;
-  --global-font-family:
-    -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue",
-    "Lucida Grande", Arial, sans-serif;
-  --global-secondary-text-color: #666;
-  --global-tertiary-text-color: #444;
-  --global-tech-stack-bg: #f4f4f4;
-  --global-tech-stack-color: #333;
-  --global-social-icon-color: #555;
-  --global-shadow-color: rgba(0, 0, 0, 0.08);
-}
-
-/* Dark Mode */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --global-text-color: #e0e0e0;
-    --global-bg-color: #1a1a1a;
-    --global-theme-color: #4db8d8;
-    --global-divider-color: #333333;
-    --global-secondary-text-color: #aaaaaa;
-    --global-tertiary-text-color: #cccccc;
-    --global-tech-stack-bg: #2a2a2a;
-    --global-tech-stack-color: #e0e0e0;
-    --global-social-icon-color: #aaaaaa;
-    --global-shadow-color: rgba(0, 0, 0, 0.3);
-  }
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@import "tailwindcss";
 
 body {
-  font-family: var(--global-font-family);
-  color: var(--global-text-color);
-  background-color: var(--global-bg-color);
-  line-height: 1.6;
-  font-size: 1rem;
+  font-family: "IBM Plex Mono", monospace;
 }
 
-/* Navbar stile al-folio (header in alto con bordo sottile) */
-header {
-  border-bottom: 1px solid var(--global-divider-color);
-  padding: 1rem 0;
-  margin-bottom: 3rem;
+html {
+  scroll-behavior: smooth;
 }
 
-.header-container {
-  max-width: 800px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 1.5rem;
-}
-
-.header-container .logo {
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: var(--global-text-color);
-  text-decoration: none;
-}
-
-nav {
-  display: flex;
-  gap: 1.5rem;
-}
-
-nav a {
-  color: var(--global-secondary-text-color);
-  text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.2s;
-}
-
-nav a:hover,
-nav a.active {
-  color: var(--global-theme-color);
-}
-
-/* Container Principale */
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 1.5rem 4rem;
-}
-
-/* Sezione Profilo (Testo a sx, Foto a dx) */
-.profile-wrapper {
-  display: flex;
-  gap: 3rem;
-  align-items: flex-start;
-  margin-bottom: 3rem;
-}
-
-.profile-text {
-  flex: 1;
-}
-
-.profile-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 0.2rem;
-  letter-spacing: -0.5px;
-}
-
-.profile-subtitle {
-  font-size: 1.2rem;
-  color: var(--global-secondary-text-color);
-  margin-bottom: 1.5rem;
-  font-weight: 400;
-}
-
-.profile-image {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 5px 15px var(--global-shadow-color);
-}
-
-p {
-  margin-bottom: 1rem;
-  color: var(--global-tertiary-text-color);
-}
-
-a {
-  color: var(--global-theme-color);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* Icone Social */
-.social-icons {
-  margin-top: 1.5rem;
-  display: flex;
-  gap: 1rem;
-  font-size: 1.5rem;
-}
-
-.social-icons a {
-  color: var(--global-social-icon-color);
-  transition: color 0.2s;
-}
-
-.social-icons a:hover {
-  color: var(--global-theme-color);
-}
-
-/* Sezione News / Tech Stack */
-h2 {
-  font-size: 1.5rem;
-  border-bottom: 1px solid var(--global-divider-color);
-  padding-bottom: 0.5rem;
-  margin: 2.5rem 0 1rem;
-  font-weight: 600;
-}
-
-.tech-stack ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.tech-stack li {
-  background-color: var(--global-tech-stack-bg);
-  color: var(--global-tech-stack-color);
-  padding: 0.3rem 0.8rem;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  font-family: monospace;
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  .profile-wrapper {
-    flex-direction: column-reverse;
-    text-align: center;
-    align-items: center;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  .social-icons {
-    justify-content: center;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}
+
+.animation-delay-600 {
+  animation-delay: 0.6s;
 }
